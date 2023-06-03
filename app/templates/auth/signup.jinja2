@@ -1,0 +1,45 @@
+{% extends 'base.jinja2' %}
+
+{% block content %}
+    <div class="container">
+        <div class="container-fluid d-flex h-100 justify-content-center align-items-center p-0">
+            <form class="form" method="POST" action="">
+                {{ form.csrf_token() }}
+                <h1>{% block title %} Sign up {% endblock %}</h1>
+
+                <div class="form-floating mt-1">
+                    {{ form.username(class="form-control", id="floatingInput", placeholder="username123") }}
+                    {{ form.username.label(for="floatingInput") }}
+                </div>
+                <div class="form-floating mt-1">
+                    {{ form.email(class="form-control", id="floatingInput", placeholder="username123") }}
+                    {{ form.email.label(for="floatingInput") }}
+                </div>
+                <div class="form-floating mt-1">
+                    {{ form.password(class="form-control", id="floatingInput", placeholder="username123") }}
+                    {{ form.password.label(for="floatingInput") }}
+                </div>
+                <div class="form-floating mt-1">
+                    {{ form.confirm(class="form-control", id="floatingInput", placeholder="username123") }}
+                    {{ form.confirm.label(for="floatingInput") }}
+                </div>
+                <div class="checkbox mb-3 mt-1">
+                    {{ form.remember_me(type="checkbox", value="remember-me") }}
+                    {{ form.remember_me.label() }}
+                </div>
+                <div class="checkbox mb-3 mt-1">
+                    {{ form.accept_policy(type="checkbox", value="accept") }}
+                    {{ form.accept_policy.label() }}
+                </div>
+                {% for field, errors in form.errors.items() %}
+                    <small class="form-text text-muted mt-1">
+                        {{ ', '.join(errors) }}
+                    </small>
+                {% endfor %}
+                {{ form.submit(class="w-100 btn btn-lg btn-primary") }}
+                <a class="mt-4 w-100 btn btn-lg btn-primary" href="{{ url_for('auth.redirect_to_github') }}"> Sign in with
+                    GitHub</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}

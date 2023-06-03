@@ -1,0 +1,22 @@
+{% extends 'base.jinja2' %}
+
+{% block content %}
+    <span class="title"><h1>{% block title %} Мой дневник {% endblock %}</h1></span>
+    <div class="content">
+        <div class="diary">
+            {% for diary_elem in diary %}
+                <div class="day">
+                    {% for subject in diary_elem.subjects %}
+                        <div class="subject">
+                            <div class="subject-name"></div>
+                            <div class="homework"></div>
+                            <div class="grade"></div>
+                            <div class="teacher"></div>
+                            <div class="classroom-number"></div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
