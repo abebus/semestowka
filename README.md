@@ -1,29 +1,19 @@
-An app template for large Flask applications with Flask-SQLAlchemy integration. The application has the following structure:
+Состоянияе проекта: не доделан, но сдан.
+Тематика веб-приложения: не уточнена, по идее электронный дневник.
+Использованные библиотеки: есть в requeirements.txt
 
-```
-.
-├── app
-│   ├── extensions.py
-│   ├── __init__.py
-│   ├── main
-│   │   ├── __init__.py
-│   │   └── routes.py
-│   ├── models
-│   │   ├── post.py
-│   │   └── question.py
-│   ├── posts
-│   │   ├── __init__.py
-│   │   └── routes.py
-│   ├── questions
-│   │   ├── __init__.py
-│   │   └── routes.py
-│   └── templates
-│       ├── base.html
-│       ├── index.html
-│       ├── posts
-│       │   ├── categories.html
-│       │   └── index.html
-│       └── questions
-│           └── index.html
-├── config.py
-```
+Функциональность:
+Наличие аутентификации и регистрации, возможности разлогиниться. Сессии
+Наличие страницы управления учётной записью - изменений email, логина, пароля, вспомнить/сбросить пароль по почте. 
+Скрипт для заполнения БД несколькими записями
+Наличие базового дизайна (свой CSS или Bootstrap)
+Отсутствие критических багов
+Flask в качестве back-end части
+venv + requirements.txt в качестве инструмента управления зависимостями
+Тип аутентификации - поддержка OAuth2 с использованием стороннего провайдера (Git)
+2 подприложения (websocket, api) без реализованного функционала 
+Сброс пароля пользователя по почте с помощью фоновой задачи
+Использование SQLAlchemy для работы с базами данных 
+WTForms (валидация приходящих данных)
+Sqlite в качестве базы данных.
+Возможность запуска с помощью ASGI (uWSGI) 
